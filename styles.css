@@ -1,0 +1,30 @@
+:root{
+  --bg:#0b1220;
+  --panel-bg:rgba(15, 23, 42, 0.92);
+  --panel-line:rgba(148,163,184,0.25);
+  --text:#e5eefb;
+  --muted:#b7c7dd;
+  --accent:#60a5fa;
+  --accent2:#34d399;
+  --glow:rgba(96,165,250,0.18);
+}
+*{ box-sizing:border-box }
+html,body{height:100%;margin:0;background:var(--bg);font-family:Inter, system-ui, Arial;color:var(--text);}
+#canvas-holder{width:100%;height:100vh;display:block}
+#ui{position:absolute;inset:0;z-index:10;pointer-events:none}
+#topbar,#panel,#aiResult,#shareBtn{pointer-events:auto}
+#topbar{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center}
+#query{flex:1;min-width:0;background:rgba(15,23,42,0.6);border:1px solid var(--panel-line);padding:10px 12px;border-radius:10px;color:var(--text);}
+button{border:1px solid rgba(255,255,255,0.06);background:rgba(59,130,246,0.08);color:var(--text);border-radius:10px;padding:10px 12px;cursor:pointer}
+#status{color:var(--muted);font-size:13px;margin-left:8px}
+#panel{position:absolute;left:12px;bottom:12px;width:360px;background:var(--panel-bg);border:1px solid var(--panel-line);border-radius:12px;padding:12px;backdrop-filter: blur(6px);}
+.panel-header{display:flex;align-items:center;justify-content:space-between}
+#objName{margin:0;font-size:18px}
+#objDesc{color:var(--muted);font-size:14px}
+#panelActions{display:flex;gap:8px;margin-top:8px}
+#aiResult{position:absolute;right:14px;top:14px;max-width:420px;background:rgba(15,23,42,0.9);border:1px solid var(--panel-line);padding:12px;border-radius:10px;color:var(--text)}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:40}
+.modal-inner{background:linear-gradient(180deg,#071027,#0c2136);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);color:var(--text);width:360px;text-align:center}
+#qrcode{display:flex;justify-content:center;margin:12px}
+.close{position:absolute;right:12px;top:12px;background:transparent;border:none;color:var(--text);font-size:18px}
+@media(max-width:700px){#panel{width:calc(100% - 24px)}#aiResult{right:12px;left:12px;top:auto;bottom:160px}}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Digital Lab — Advanced Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="ui">
+    <div id="topbar">
+      <input id="query" type="text" placeholder="Ask the lab a question... (press Enter)" />
+      <button id="explainBtn">Explain</button>
+      <button id="lockBtn">Enter Lab</button>
+      <button id="shareBtn">Share / QR</button>
+      <div id="status">Status: ready</div>
+    </div>
+
+    <div id="panel" hidden>
+      <div class="panel-header">
+        <h3 id="objName">Object</h3>
+        <button id="closePanel">✕</button>
+      </div>
+      <p id="objDesc">Description</p>
+      <div id="panelActions">
+        <button id="mixBtn">Mix in beaker</button>
+        <button id="focusBtn">Focus item</button>
+      </div>
+    </div>
+
+    <div id="aiResult">Ask about a shelf, a tool, a reaction, or a physics formula.</div>
+  </div>
+
+  <div id="canvas-holder"></div>
+
+  <!-- QR code library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script type="module" src="./main.js"></script>
+
+  <!-- QR Modal -->
+  <div id="qrModal" class="modal" hidden>
+    <div class="modal-inner">
+      <button id="closeQr" class="close">✖</button>
+      <h2>Open the Lab</h2>
+      <p>Scan this QR with your phone to open the GitHub Pages site (or press the link).</p>
+      <div id="qrcode"></div>
+      <p><a id="pagesLink" href="https://lama855.github.io/digital-lab-prototype/" target="_blank">https://lama855.github.io/digital-lab-prototype/</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
